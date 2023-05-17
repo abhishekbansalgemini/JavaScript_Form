@@ -1,8 +1,7 @@
-function validate(e){
-    e.preventDefault();
-    var passValue = document.getElementById("password").value
-    var confpassValue = document.getElementById("confirm_password").value
-    if(passValue !== confpassValue) {
+function validate(){
+    var pass = document.getElementById("password").value
+    var confirm = document.getElementById("confirm_password").value
+    if(pass !== confirm) {
        window.alert("Passwords does not match!");
     }  
     
@@ -54,10 +53,7 @@ function validate(e){
         }
     }
 
-    if(flag3 === false){
-        mob = mobile
-    }
-
+  
 
     //table logic
 
