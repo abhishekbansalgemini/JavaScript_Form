@@ -1,8 +1,4 @@
-function validate(e){
-    e.preventDefault();
-    
-    //validating password
-    
+function validate(){
     var pass = document.getElementById("password").value
     var confirm = document.getElementById("confirm_password").value
     if(pass !== confirm) {
@@ -57,8 +53,7 @@ function validate(e){
         }
     }
 
- 
-
+  
 
     //table logic
 
