@@ -1,5 +1,8 @@
 function validate(e){
     e.preventDefault();
+    
+    //validating password
+    
     var passValue = document.getElementById("password").value
     var confpassValue = document.getElementById("confirm_password").value
     if(passValue !== confpassValue) {
