@@ -1,4 +1,5 @@
-function validate(){
+function validate(e){
+    e.preventDefault();
     var pass = document.getElementById("password").value
     var confirm = document.getElementById("confirm_password").value
     if(pass !== confirm) {
@@ -9,23 +10,31 @@ function validate(){
     // Validating Name
 
     var first_name = document.getElementById("first_name").value;
+    first_name = first_name.trim();
+    if(first_name.length == 0){
+        alert("Enter the valid first name")
+    }
     for(let i=0; i<first_name.length; i++){
         if((first_name[i] >= 'a' && first_name[i] <= 'z') || (first_name[i] >= 'A' && first_name[i] <= 'Z') || (first_name[i] === ' '))  {
 
         }  
         else{
-            window.alert("Enter the valid name");
+            window.alert("Enter the valid first name");
             break;
         }
     }
 
     var last_name = document.getElementById("last_name").value;
+    last_name = last_name.trim();
+    if(last_name.length == 0){
+        alert("Enter the valid last name")
+    }
     for(let i=0; i<last_name.length; i++){
         if((last_name[i] >= 'a' && last_name[i] <= 'z') || (last_name[i] >= 'A' && last_name[i] <= 'Z') || (last_name[i] === ' '))  {
             
         }  
         else{
-            window.alert("Enter the valid name");
+            window.alert("Enter the valid last name");
             break;
         }
     }
@@ -96,4 +105,8 @@ function validate(){
     //         tbody.append(td);
     //     }
     // }
+    
+    console.log(first_name + " " + last_name + " " + mobile);
 }
+
+document.getElementById("register").addEventListener('click', validate);
