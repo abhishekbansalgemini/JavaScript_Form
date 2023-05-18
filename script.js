@@ -13,6 +13,7 @@ function validate(e){
     first_name = first_name.trim();
     if(first_name.length == 0){
         alert("Enter the valid first name")
+        window.location.href = "index.html";
     }
     for(let i=0; i<first_name.length; i++){
         if((first_name[i] >= 'a' && first_name[i] <= 'z') || (first_name[i] >= 'A' && first_name[i] <= 'Z') || (first_name[i] === ' '))  {
@@ -20,7 +21,7 @@ function validate(e){
         }  
         else{
             window.alert("Enter the valid first name");
-            break;
+            window.location.href = "index.html";
         }
     }
 
