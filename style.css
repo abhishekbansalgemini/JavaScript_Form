@@ -8,7 +8,6 @@ body{
     flex: 1;
     justify-content: center;
     align-items: center;
-
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
 .welcome{
@@ -19,6 +18,20 @@ body{
     align-items: center;
 }
 
+.loginn{
+    width: 140px;text-align: center;
+}
+
+.welcome_2{
+    margin-left:auto;white-space: normal;
+}
+.welcome_3{
+    text-align: center; color: white; font-size: 30px; display: flex;
+            flex-direction: column;line-height: 20px;
+}
+.gemini{
+    display: flex;flex-direction:row;width: 100%;gap:5px;flex-wrap: wrap;justify-content: center;margin-top: 10px;
+}
 .welcome_heading{
     font-size: 30px;
     color: white;
@@ -33,11 +46,14 @@ body{
 .container{
     margin: 20px;
     width: 80%;
-    height: 500px;
+    height: 595px;
     display: flex;
     justify-content: center;
     align-items: center;
 
+}
+.drop{
+    margin-top: 56px !important;
 }
 .login_form{
     width: 100%;
@@ -63,11 +79,11 @@ body{
 
 
 .partition1{
-    width: 40%;
+    width: 45%;
     height: 80%;
 }
 .partition2{
-    width: 40%;
+    width: 45%;
     height: 80%;
 }
 
@@ -95,6 +111,7 @@ form{
 
     }
 
+
     .input_partitions {
 
         flex-direction: column;
@@ -107,7 +124,284 @@ form{
     }
 
     .login_form {
+        margin-top: 50%;
         height: auto;
+        width: 80%;
+        /* margin-top: 0% !important; */
+        border-top-left-radius: 0% 0% !important;
+        border-bottom-left-radius: 0% 0% !important;
+        border-radius: 2% !important;
+        margin-bottom: 5% !important;
+    }
+
+    .partition1 {
+        width: 60% !important;
+    }
+
+    .partition2 {
+        width: 60% !important;
+
+    }
+
+    .welcome {
+        display: flex;
+        gap: 20px;
+        height: 170px;
+    }
+    .welcome_2
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .welcome_3
+    {
+        display: flex;
+            flex-direction: column;
+            gap: 10px;
+    }
+
+    .login_button {
+        margin-top: 0% !important;
+        /* align-items: baseline; */
+    }
+
+    .welcome_heading {
+        /* display: flex;   */
+        text-align: center;
+        color: white;
+        font-size: 20px !important;
+    }
+
+    .col {
+        margin: 1% !important;
+    }
+
+    .btn-class {
+        justify-content: center !important;
+    }
+
+    p {
+        margin-bottom: 0rem;
+    }
+
+    .welcome {
+        width: fit-content !important;
+    }
+    .login_heading{
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 28px;
+    }
+}
+
+@media(max-width:510px){
+    body {
+        flex-direction: column;
+
+    }
+
+    .input_partitions {
+
+        flex-direction: column;
+        align-items: center;
+    }
+    .login_heading{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    input {
+        /* padding: 12px 12px 12px 12px; */
+        margin-bottom: 10px;
+    }
+
+    .login_form {
+        margin-top: 70%;
+        height: auto;
+        width: 80%;
+        /* margin-top: 0% !important; */
+        border-top-left-radius: 0% 0% !important;
+        border-bottom-left-radius: 0% 0% !important;
+        border-radius: 2% !important;
+        margin-bottom: 5% !important;
+    }
+
+    .partition1 {
+        width: 60% !important;
+    }
+
+    .partition2 {
+        width: 60% !important;
+
+    }
+
+    .welcome {
+        display: flex;
+        gap: 20px;
+        height: 170px;
+    }
+    .welcome_2
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .welcome_3
+    {
+        display: flex;
+            flex-direction: column;
+            gap: 10px;
+    }
+
+    .login_button {
+        margin-top: 0% !important;
+        /* align-items: baseline; */
+    }
+
+    .welcome_heading {
+        /* display: flex;   */
+        text-align: center;
+        color: white;
+        font-size: 20px !important;
+    }
+
+    .col {
+        margin: 1% !important;
+    }
+
+    .btn-class {
+        justify-content: center !important;
+    }
+
+    p {
+        margin-bottom: 0rem;
+    }
+
+    .welcome {
+        width: fit-content !important;
+    }
+}
+
+@media(max-width:423px){
+    body {
+        flex-direction: column;
+
+    }
+
+    .login_heading{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .input_partitions {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        /* padding: 12px 12px 12px 12px; */
+        margin-bottom: 10px;
+    }
+
+    .login_form {
+        margin-top: 90%;
+        height: auto;
+        width: 80%;
+        /* margin-top: 0% !important; */
+        border-top-left-radius: 0% 0% !important;
+        border-bottom-left-radius: 0% 0% !important;
+        border-radius: 2% !important;
+        margin-bottom: 5% !important;
+    }
+
+    .partition1 {
+        width: 60% !important;
+    }
+
+    .partition2 {
+        width: 60% !important;
+
+    }
+
+    .welcome {
+        display: flex;
+        gap: 20px;
+        height: 170px;
+    }
+    .welcome_2
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .welcome_3
+    {
+        display: flex;
+            flex-direction: column;
+            gap: 10px;
+    }
+
+    .login_button {
+        margin-top: 0% !important;
+        /* align-items: baseline; */
+    }
+
+    .welcome_heading {
+        /* display: flex;   */
+        text-align: center;
+        color: white;
+        font-size: 20px !important;
+    }
+
+    .col {
+        margin: 1% !important;
+    }
+
+    .btn-class {
+        justify-content: center !important;
+    }
+
+    p {
+        margin-bottom: 0rem;
+    }
+
+    .welcome {
+        width: fit-content !important;
+    }
+}
+
+@media(max-width:340px){
+    body {
+        flex-direction: column;
+
+    }
+
+    .login_heading{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .input_partitions {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        /* padding: 12px 12px 12px 12px; */
+        margin-bottom: 10px;
+    }
+
+    .login_form {
+        margin-top: 110%;
+        height: auto;
+        width: 80%;
         /* margin-top: 0% !important; */
         border-top-left-radius: 0% 0% !important;
         border-bottom-left-radius: 0% 0% !important;
