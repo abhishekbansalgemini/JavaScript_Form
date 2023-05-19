@@ -1,6 +1,6 @@
 function validate(e){
 
-    // e.preventDefault();
+    e.preventDefault();
 
    
     
