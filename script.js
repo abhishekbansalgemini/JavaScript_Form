@@ -1,10 +1,8 @@
 function validate(e){
-    e.preventDefault();
-    var pass = document.getElementById("password").value
-    var confirm = document.getElementById("confirm_password").value
-    if(pass !== confirm) {
-       window.alert("Passwords does not match!");
-    }  
+
+    // e.preventDefault();
+
+   
     
    
     // Validating Name
@@ -14,6 +12,7 @@ function validate(e){
     if(first_name.length == 0){
         alert("Enter the valid first name")
         window.location.href = "index.html";
+        return false;
     }
     for(let i=0; i<first_name.length; i++){
         if((first_name[i] >= 'a' && first_name[i] <= 'z') || (first_name[i] >= 'A' && first_name[i] <= 'Z') || (first_name[i] === ' '))  {
@@ -22,6 +21,7 @@ function validate(e){
         else{
             window.alert("Enter the valid first name");
             window.location.href = "index.html";
+            return false;
         }
     }
 
@@ -29,6 +29,7 @@ function validate(e){
     last_name = last_name.trim();
     if(last_name.length == 0){
         alert("Enter the valid last name")
+        return false;
     }
     for(let i=0; i<last_name.length; i++){
         if((last_name[i] >= 'a' && last_name[i] <= 'z') || (last_name[i] >= 'A' && last_name[i] <= 'Z') || (last_name[i] === ' '))  {
@@ -37,6 +38,7 @@ function validate(e){
         else{
             window.alert("Enter the valid last name");
             break;
+            return false;
         }
     }
 
@@ -47,9 +49,11 @@ function validate(e){
     var mobile = document.getElementById("phone").value;
     if(mobile.length != 10){
         window.alert("Invalid Phone Number");
+        return false;
     }
     else if(mobile[0] >='0' && mobile[0] <= '5'){
         window.alert("Invalid Phone Number");
+        return false;
     }
     else{
         for(let i=0; i<10; i++){
@@ -59,11 +63,27 @@ function validate(e){
             else{
                 window.alert("Invalid Phone Number");
                 break;
+                return false;
             }
         }
     }
 
-  
+     //password validation
+     var pass = document.getElementById("password").value
+     var confirm = document.getElementById("confirm_password").value
+     if(pass !== confirm) {
+        window.alert("Passwords does not match!");
+        return false;
+     }  
+
+    // Answer validation
+
+    var answer = document.getElementById('answer').value;
+    answer = answer.trim();
+    if(answer.length === 0){
+        window.alert("Invalid answer");
+        return false;
+    }
 
     //table logic
 
@@ -108,6 +128,8 @@ function validate(e){
     // }
     
     console.log(first_name + " " + last_name + " " + mobile);
+    // alert("Details entered Successfully");
+    return true;
 }
 
 document.getElementById("register").addEventListener('click', validate);
