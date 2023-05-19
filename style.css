@@ -1,92 +1,27 @@
 *{
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 body{
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;     
-    /* justify-content: center; */
-    /* text-align: center; */
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    /* padding: 2%; */
 }
-
 .welcome{
-    width: 15%;
+    width: 20%;
     height: 657px;
-    /* display: flex; */
-    justify-content: end;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: 3%;  
-    margin-top: 10%;
 }
 
-@media(max-width:700px){
-    body{
-        flex-direction: column;
-        
-    }
-    .input_partitions{
-
-        flex-direction: column;
-        align-items: center;
-    }
-    input{
-        /* padding: 12px 12px 12px 12px; */
-        margin-bottom: 10px;
-    }
-    .login_form{
-        height: 9;
-        /* margin-top: 0% !important; */
-        border-top-left-radius: 0% 0%  !important;
-    border-bottom-left-radius: 0% 0% !important;
-    border-radius: 2% !important;
-    margin-bottom:  5% !important;
-    }
-    .partition1{
-        width: 60% !important;
-    }
-    .partition2{
-        width: 60% !important;
-
-    }
-    .welcome{
-        height: 170px;
-    }
-    .login_button{
-        margin-top: 0% !important;
-        /* align-items: baseline; */
-    }
-    .welcome_heading{
-        /* display: flex;   */
-        text-align: center; 
-        color: white; 
-        font-size: 20px !important;
-    }
-    .col{
-        margin: 1% !important;
-    }
-    .btn-class{
-        justify-content: center !important;
-    }
-    p{
-        margin-bottom: 0rem;
-    }
-    .welcome{
-        width: fit-content !important   ;
-    }
-}
 .welcome_heading{
-    display: flex;  
-    flex-direction: column;
-    align-items: center;
-    text-align: center; 
-    color: white; 
     font-size: 30px;
-    
+    color: white;
 }
 
 
@@ -96,20 +31,20 @@ body{
     align-items: center;
 }
 .container{
-    margin: 0;
+    margin: 20px;
     width: 80%;
-    /* height: 640px; */
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 .login_form{
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     background-color: white;
-    border-top-left-radius: 20% 60%;
-    border-bottom-left-radius: 20% 60%;
+    border-top-left-radius: 8% 60%;
+    border-bottom-left-radius: 8% 60%;
 }
 
 .login_heading{
@@ -123,17 +58,17 @@ body{
     height: 80%;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 
 
 .partition1{
     width: 40%;
-    height: 100%;
+    height: 80%;
 }
 .partition2{
     width: 40%;
-    height: 100%;    
+    height: 80%;
 }
 
 form{
@@ -141,15 +76,97 @@ form{
     height: 100%;
 }
 .login_button{
-    margin-top: 70px;
+    margin-top: 160px;
     display: flex;
+    
     justify-content: center;
     align-items: center;
 }
 
 .btn{
     /* height: 40px; */
-    margin-bottom: 10px;
+
     width: 100px;
     border-radius: 15px;
+}
+@media(max-width:700px) {
+    body {
+        flex-direction: column;
+
+    }
+
+    .input_partitions {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        /* padding: 12px 12px 12px 12px; */
+        margin-bottom: 10px;
+    }
+
+    .login_form {
+        height: auto;
+        /* margin-top: 0% !important; */
+        border-top-left-radius: 0% 0% !important;
+        border-bottom-left-radius: 0% 0% !important;
+        border-radius: 2% !important;
+        margin-bottom: 5% !important;
+    }
+
+    .partition1 {
+        width: 60% !important;
+    }
+
+    .partition2 {
+        width: 60% !important;
+
+    }
+
+    .welcome {
+        display: flex;
+        gap: 20px;
+        height: 170px;
+    }
+    .welcome_2
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .welcome_3
+    {
+        display: flex;
+            flex-direction: column;
+            gap: 10px;
+    }
+
+    .login_button {
+        margin-top: 0% !important;
+        /* align-items: baseline; */
+    }
+
+    .welcome_heading {
+        /* display: flex;   */
+        text-align: center;
+        color: white;
+        font-size: 20px !important;
+    }
+
+    .col {
+        margin: 1% !important;
+    }
+
+    .btn-class {
+        justify-content: center !important;
+    }
+
+    p {
+        margin-bottom: 0rem;
+    }
+
+    .welcome {
+        width: fit-content !important;
+    }
 }
