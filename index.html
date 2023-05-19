@@ -20,19 +20,18 @@
            
         </div> -->
 
-        <div class="welcome_2" style="margin-left:auto;white-space: normal;">
-            <div class="welcome_3" style="text-align: center; color: white; font-size: 30px; display: flex;
-            flex-direction: column;line-height: 20px;">
+        <div class="welcome_2">
+            <div class="welcome_3">
                 <p class="fw-bold">Welcome</p>
                 <p>To</p>
                 <div
-                    style="display: flex;flex-direction:row;width: 100%;gap:5px;flex-wrap: wrap;justify-content: center;margin-top: 10px;">
+                    class="gemini">
                     <p>Gemini </p>
                     <p> Solutions</p>
                 </div>
             </div>
             <div class="login_button">
-                <button type="button" class="btn btn-light" style="width: 140px;text-align: c;">Login</button>
+                <button type="button loginn" class="btn btn-light">Login</button>
             </div>
         </div>
 
@@ -40,30 +39,36 @@
     <div class="container">
         <div class="login_form">
             <h1 class="login_heading">Apply as a Employee</h1>
-            <form action="">
+            <form action="" onsubmit="return validate();">
                 <div class="input_partitions">
                     <div class="partition1">
-
+                        
                         <div class="col m-2 my-4">
+                            <label class="form-label fw-bold" for="first_name">First Name:</label>
                             <input type="text" name="first_name" id="first_name" class="form-control"
                                 placeholder="First name" required>
+                            <p class="fname_error"></p>
                         </div>
 
                         <div class="col m-2 my-4">
+                            <label class="form-label fw-bold" for="last_name">Last Name:</label>
                             <input type="text" name="last_name" id="last_name" class="form-control"
                                 placeholder="Last name" required>
                         </div>
 
                         <div class="col m-2 my-4">
+                            <label class="form-label fw-bold" for="password">Password:</label>
                             <input type="password" name="password" id="password" class="form-control"
                                 placeholder="Password" required>
                         </div>
 
                         <div class="col m-2 my-2">
+                            <label class="form-label fw-bold" for="confirm_password">Confirm Password:</label>
                             <input type="password" name="confirm_password" id="confirm_password" class="form-control"
                                 placeholder="Confirm Password" required>
                         </div>
                         <div class="col m-2">
+                            <label class="form-label fw-bold" for="gender">Gender:</label>
                             <input class="form-check-input" type="radio" name="gender" id="male" checked>
                             <label class="form-check-label" for="male">
                                 Male
@@ -81,14 +86,17 @@
                     </div>
                     <div class="partition2">
                         <div class="col m-2 my-4">
+                            <label class="form-label fw-bold" for="email">Email:</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email"
                                 required>
                         </div>
 
                         <div class="col m-2 my-4">
+                            <label class="form-label fw-bold" for="phone">Phone:</label>
                             <input type="number" name="phone" id="phone" class="form-control" placeholder="Your Phone">
                         </div>
                         <div class="col m-2 my-4">
+                            <label class="form-label fw-bold" for="Security_Question">Security Question:</label>
                             <!-- <input type="text" class="form-control" placeholder="Please Select your Security Question" required> -->
                             <select class="form-select" aria-label="Default select example" required>
                                 <option selected>Please Select your Security Question</option>
@@ -99,13 +107,13 @@
                         </div>
 
                         <div class="col m-2 my-4">
+                            <label class="form-label fw-bold" for="answer">Answer:</label>
                             <input type="text" name="answer" id="answer" class="form-control"
                                 placeholder="Enter Your Answer" required>
                         </div>
 
-                        <div class="col m-2 d-flex justify-content-center my-5">
-                            <button type="button submit" class="btn btn-primary rounded" onclick="validate()"
-                                id="register">Register</button>
+                        <div class="col m-2 d-flex justify-content-end my-5">
+                            <button type="button submit" class="btn btn-primary rounded" id="register">Register</button>
                         </div>
                     </div>
                 </div>
