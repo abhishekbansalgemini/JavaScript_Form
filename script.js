@@ -1,6 +1,8 @@
+var table_flag = 0;
+
 function validate(e) {
 
-    // e.preventDefault();
+    e.preventDefault();
 
     var flag = false;
 
@@ -125,8 +127,8 @@ function validate(e) {
 
     const gen = document.getElementsByName("gender");
     var gender;
-    for(let i=0; i<gen.length; i++){
-        if(gen[i].checked){
+    for (let i = 0; i < gen.length; i++) {
+        if (gen[i].checked) {
             gender = gen[i].value;
         }
     }
@@ -176,7 +178,7 @@ function validate(e) {
         // window.alert("Invalid answer");
         document.getElementById("ans_error").textContent = "Enter the valid answer";
         document.getElementById("ans_error").style.color = "red";
-        document.getElementById("confirm_password").style.borderColor = "red";
+        document.getElementById("answer").style.borderColor = "red";
         flag = true;
         return false;
     }
@@ -186,78 +188,105 @@ function validate(e) {
     }
 
 
-
-
-
-
-
-
     //Local Storage
+
 
     if (flag == false) {
         // e.preventDefault();     
-        const json_obj = {
-            FIRST_NAME: first_name,
-            LAST_NAME: last_name,
-            GENDER: gender,
-            EMAIL: document.getElementById("email").value,
-            MOBILE: mobile,
-            PASSWORD: pass,
-            Question: ques,
-            answer: answer
-        }
-        const ans = JSON.stringify(json_obj);
-        localStorage.setItem("userdata", ans);
-        console.log(first_name + " " + last_name + " " + mobile);
 
-        // table logic
+        storing_data(first_name, last_name, gender, mobile, email, pass, ques, answer);
 
-        var table = document.createElement("table");
-        var div = document.getElementById("mytable");
-        div.appendChild(table);
-        table.id = "user_table";
-        table.style.borderCollapse = "collapse";
-
-        //creating Caption
-
-        var caption = document.createElement('caption');
-        var cap = document.createTextNode("User Details");
-        caption.appendChild(cap);
-        table.appendChild(caption);
-
-        const fields = ["First_Name", "Last_Name", "Gender" ,"Phone", "email", "Password", "Security Question", "answer"];
-
-        var thead = document.createElement("thead");
-        for (let i = 0; i < 8; i++) {
-            let th = document.createElement("th");
-            let h = document.createTextNode(fields[i]);
-            th.appendChild(h);
-            th.style.border = "2px solid black";
-            th.style.textAlign = "center";
-            thead.append(th);
-        }
-        table.appendChild(thead)
-        // console.log(div);
-        var tbody = document.createElement("tbody");
-        const row = [first_name, last_name, gender, mobile, email, pass, ques, answer];
-        for (let i = 0; i < row.length; i++) {
-            let td = document.createElement("td");
-            let d = document.createTextNode(row[i]);
-            td.style.border = "2px solid black"
-            td.appendChild(d);
-            td.style.padding = '10px';
-            td.style.textAlign = "center";
-            tbody.append(td);
-        }
-        table.appendChild(tbody);
+        create_and_display_table(first_name, last_name, gender, mobile, email, pass, ques, answer);
 
         alert("All Details Entered Successfully");
 
-        return false;
+        return true;
     }
 
     return false;
 
 }
 
-// document.getElementById("register").addEventListener('click', validate);
+document.getElementById("register").addEventListener('click', validate);
+
+function create_and_display_table(first_name, last_name, gender, mobile, email, pass, ques, answer) {
+    if (table_flag == 0) {
+        table_flag = 1;
+        var table = document.createElement("table");
+        var div = document.getElementById("mytable");
+        div.appendChild(table);
+        table.id = "user_table";
+        table.style.borderCollapse = "collapse";
+        table.style.width = "100%";
+
+        //creating Caption
+
+        // var caption = document.createElement('caption');
+        // var cap = document.createTextNode("User Details");
+        // caption.appendChild(cap);
+        // table.appendChild(caption);
+
+        const fields = ["First_Name", "Last_Name", "Gender", "Phone", "email", "Password", "Security Question", "answer"];
+
+        var thead = document.createElement("thead");
+        for (let i = 0; i < 8; i++) {
+            let th = document.createElement("th");
+            let h = document.createTextNode(fields[i]);
+            // th.style.color = "orange";
+            th.appendChild(h);
+            th.style.borderBottom = "1px solid #ddd"
+            th.style.textAlign = "center";
+            th.style.overflow = "auto"
+            thead.append(th);
+        }
+        table.appendChild(thead);
+        var tbody = document.createElement("tbody");
+        var row = [first_name, last_name, gender, mobile, email, pass, ques, answer];
+        for (let i = 0; i < row.length; i++) {
+            let td = document.createElement("td");
+            let d = document.createTextNode(row[i]);
+            // td.style.color = "orange";
+            td.style.borderBottom = "1px solid #ddd"
+            td.appendChild(d);
+            td.style.padding = '10px';
+            td.style.textAlign = "center";
+            td.style.overflow = "auto";
+            tbody.append(td);
+        }
+        table.appendChild(tbody);
+    }
+
+    else {
+        var table = document.getElementById("user_table");
+        var tbody = document.createElement("tbody");
+        var row = [first_name, last_name, gender, mobile, email, pass, ques, answer];
+        for (let i = 0; i < row.length; i++) {
+            let td = document.createElement("td");
+            let d = document.createTextNode(row[i]);
+            // td.style.color = "orange";
+            td.style.borderBottom = "1px solid #ddd"
+            td.appendChild(d);
+            td.style.padding = '10px';
+            td.style.textAlign = "center";
+            td.style.overflow = "auto";
+            tbody.append(td);
+        }
+        table.appendChild(tbody);
+    }
+}
+function storing_data(first_name, last_name, gender, mobile, email, pass, ques, answer) {
+    const json_obj = {
+        FIRST_NAME: first_name,
+        LAST_NAME: last_name,
+        GENDER: gender,
+        EMAIL: document.getElementById("email").value,
+        MOBILE: mobile,
+        PASSWORD: pass,
+        Question: ques,
+        answer: answer
+    }
+
+    const ans = JSON.stringify(json_obj);
+    localStorage.setItem("userdata", ans);
+    console.log(first_name + " " + last_name + " " + mobile);
+}
