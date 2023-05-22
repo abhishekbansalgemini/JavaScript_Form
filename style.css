@@ -230,15 +230,23 @@ form {
         justify-content: center !important;
     }
 }
-
-@media (max-width: 700px) {
+@media (max-width: 838px) {
     #user_table{
         font-size: 12px;
+        padding: 8px;
     }
   }
 
-  @media (max-width: 550px) {
+@media (max-width: 700px) {
+    #user_table{
+        font-size: 10px;
+        padding: 5px;
+    }
+  }
+
+  @media (max-width: 580px) {
     #user_table{
         font-size: 7px;
+        padding: 3px;
     }
   }
