@@ -1,5 +1,6 @@
 var table_flag = 0;
 
+
 function validate(e) {
 
     e.preventDefault();
@@ -196,7 +197,13 @@ function validate(e) {
 
         storing_data(first_name, last_name, gender, mobile, email, pass, ques, answer);
 
-        create_and_display_table(first_name, last_name, gender, mobile, email, pass, ques, answer);
+        // Fetching data from local storage to store inside the table
+        
+        var fetching_data = localStorage.getItem("userdata");
+        const data_in_json = JSON.parse(fetching_data);
+        console.log(fetching_data);
+
+        create_and_display_table(data_in_json.FIRST_NAME, data_in_json.LAST_NAME, data_in_json.GENDER, data_in_json.MOBILE, data_in_json.EMAIL, data_in_json.PASSWORD, data_in_json.Question, data_in_json.answer);
 
         alert("All Details Entered Successfully");
 
